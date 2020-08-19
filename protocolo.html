@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SOLUTECH - Configuração Impressora de Protocolo</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+  </head>
+  <body>
+      <!--Inicio navegacao-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top py-3 box-shadow">
+      <a href="index.html" class="navbar-brand">
+        <h1 class="h3 text-warning">SOLUTECH</h1>
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Abrir Navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Impressoras</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Xerox Phaser 3250</a>
+              <a class="dropdown-item" href="#">Oki B431</a>
+              <a class="dropdown-item" href="#">Bematech</a>
+              <a class="dropdown-item" href="#">HP 2015DN</a>
+              <a class="dropdown-item" href="#">Zebra TLP 2844</a>
+              <a class="dropdown-item" href="#">Zebra GC 420T</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Certificados Digitais</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Epass2003</a>
+              <a class="dropdown-item" href="#">Safenet 5110</a>
+              <a class="dropdown-item" href="#">GD Startsign Crypto</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="contato.html">Contato</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!--Inicio navegacao-->
+    <section class="bg-light pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2 class="display-4 mt-5 text-center">Configuração de impressoras de protocolo no Windows 7</h2>
+                    <p class="lead mt-5">
+                       Diferentemente da configuração da impressora de protocolo no windows XP onde simplesmente 2 clicks em uma bat e a "mágica" acontece, no windows 7 pode causar muita dores de cabeça. Isso porque, por padrão, essas impressoras funcionam de forma simples em um micro que possui a entrada "Serial" ou "Paralela", como preferir chamar.
+                    </p>
+                    <p class="lead">
+                        Já em micros que não possuem essa entrada, foi disponibilizado cabos adaptadores USB, e é aí que a coisa pode complicar um pouco. A configuração foge um pouco do que seria o "padrão", e precisamos aplicar algumas configurações diferenciadas para ter sucesso nesse procedimento.
+                    </p>  
+                    <p class="lead">Irei separar em 2 sessões, pois atualmente, sabemos que existem 2 modelos de micros com windows 7 que podem receber impressoras de protocolo com cabo USB. São eles o "Micro fino" e o "Micro Torre". Por questões de segurança, não irei informar os devidos modelos, mas com certeza você sabe do que se trata, não é mesmo? hehe.
+
+                    </p>
+                    <h2 class="h5 text-center pt-5">CONFIGURAÇÃO "MICRO FINO"</h2>
+                    
+                    <p class="lead">
+                      Iremos precisar de alguns arquivos e caso você não os possua, entre em contato com sua equipe técnica e solicite. Não irei disponibilizar aqui, por questões de segurança, mas na foto abaixo eu te digo quais serão necessários. Iremos precisar de 2 versões específicas do Java. Esses, irei disponibilizar o link logo abaixo.
+                   </p>
+                   <a href="https://www.oracle.com/java/technologies/javase-java-archive-javase6-downloads.html" target="_blank" class="text-primary"> Java SE Development Kit 6u31</a> <br><br>
+                   <a href="https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html" target="_blank" class="text-primary">Java SE Runtime Environment 8u201</a>
+                   <div class="row my-5 d-flex justify-content-center">
+                    <img src="img/arquivosnecessariosbematech.png" alt="Arquivos necessarios protocolo" class="img-fluid">
+                   </div>
+                    <p class="lead pt-4">
+                        Após ter posse de todos esses arquivos, vamos iniciar as configurações. Primeiro, Crie 2 pastas na raiz do disco C:. Uma para alocar os arquivos de configuração da impressora e outra pra alocar as 2 versões do java.
+                    </p>
+                    <p class="lead">
+                       Certifique-se de deixar a impressora desplugada da porta USB durante o processo, é extremamente importante.
+                    </p>
+                    <p class="lead">
+                      Coloque o micro no domínio e faça o loguin na máquina com o seu perfil técnico. "fulano.fulano.xxx"
+                   </p>
+                   <p class="lead">
+                    Ao logar no micro, vá no painel de controle/ procgramas e recursos e desinstale qualquer versão instalada do Java.
+                   </p>
+                   <p class="lead">
+                    Em seguida, instale o java na versão 6.31 ( já disponibilizado para download) e em seguida instale o java 8u201. Estritamente nesta ordem.
+                   </p>
+                   <p class="lead">
+                    Em seguida, vamos conectar o cabo USB da impressora ao micro. Muita atenção nessa parte, pois não pode have erros. É extremamente necessário que seja plugado na primeira porta USB do micro. Segue imagem abaixo.
+                   </p>
+                   <div class="row my-5 d-flex justify-content-center">
+                    <img src="img/av2usb.jpeg" alt="Install Bematech" class="img-fluid">
+                   </div>
+                   <p class="lead">
+                    Após o plug, o windows irá instalar o driver genérico, você pode acompanhar. São 2 drivers a serem instalados, apenas aguarde o término. Pode demorar um pouco. Paciencia !
+                    Caso o processo de instalação genérica nao conclua, podemos afirmar que o cabo USB está com problemas. Solicite a substituição.
+                   </p>
+                   <p class="lead">
+                     Por fim, quando o windows concluir as instalações genéricas, podemos iniciar a configuração da impressora.
+                     Abra a pasta contendo os arquivos e execute o arquivo "install.bat"
+                   </p>
+                   <div class="row my-5 d-flex justify-content-center">
+                    <img src="img/installbematech.png" alt="Install Bematech" class="img-fluid">
+                   </div>
+                   <p class="lead">
+                    O processo é bem rápido, não se preocupe. Agora execute a bat "runtray"
+                  </p>
+                  <div class="row my-5 d-flex justify-content-center">
+                    <img src="img/runtraybematech.png" alt="Install runtray" class="img-fluid">
+                  </div>
+                  <p class="lead">
+                   Após a execução da bat, irá abrir uma janela de configuração próximo ao relógio do windows, na parte inferior direita. Clique na janela pra abrir as configurações.
+                  </p>
+                 <p class="lead">
+                   Aqui apenas precisamos nos certificar que a opção USB001 está selecionada, e o modelo de impressora sendo o mesmo da instalada. Caso a sua seja BEMATECH, apenas altere para DARUMA e volte para BEMATECH, para que o botão "salvar" possa habilitar.
+                   Em seguida clique no botão salvar e reinicie o micro.
+                 </p>
+                 <p class="lead">
+                   Peça para o usuário testar, se todos os passos foram seguidos, o processo está terminado. Espero que tenha funcionado.
+                 </p> 
+                  <p class="lead">
+                    Não custa nada te lembrar que a sua participação para que o conteúdo aqui cresça, é primordial. Por isso, pedimos que ao descobrir uma nova solução para um determinado problema, entre em contato e nos informe a sua forma de solução deste problema. Iremos adicionar em nossa base de dados e
+                    assim podemos nos ajudar e ao mesmo tempo criar um padrão de excelencia em nossos atendimentos. Válido para equipe técnica N1 e N2.
+                  </p>
+                </div>
+            </div>
+            <div class="row text-center justify-content-center">
+            <a href="contato.html" class="btn btn-dark btn-lg mt-4">Contribuir para a base de dados</a> 
+            </div>
+        </div>
+        
+    </section>
+  
+      <footer class="bg-dark text-white">
+        <div class="container py-4">
+          <div class="row">
+            <div class="col-md-3 col-6">
+              <h4 class="h6">PÁGINAS</h4>
+              <ul class="list-unstyled">
+                <li><a class="text-warning" href="index.html">Início</a></li>
+                <li><a class="text-warning" href="sobre.html">Sobre</a></li>
+                <li><a class="text-warning" href="contato.html">Contato</a></li>
+              </ul>
+            </div>
+  
+            <div class="col-md-3 col-6">
+              <h4 class="h6">SOLUÇÕES</h4>
+              <ul class="list-unstyled">
+                <li><a class="text-warning" href="local.html">Impressoras</a></li>
+                <li><a class="text-warning" href="local.html">Certificados digitais</a></li>
+                <li><a class="text-warning" href="local.html">Navegadores</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h4 class="h6">DADOS DE CONTATO</h4>
+              <ul class="list-unstyled text-secondary">
+                <li>solutech-ti@outlook.com</li>
+                <li>21 99999-9999</li>
+                <li>De Seg a Sex. das 9h às 18h</li>
+              </ul>
+            </div>
+            <div class="col-md-2">
+              <h4 class="h6">REDES SOCIAIS</h4>
+              <ul class="list-unstyled text-secondary">
+                <li> <a href="#" class="btn btn-outline-secondary mb-2 btn-block btn-sm" style="max-width: 140px;">Facebook</a></li>
+                <li> <a href="#" class="btn btn-outline-secondary mb-2 btn-block btn-sm" style="max-width: 140px;">Instagram</a></li>
+                <li> <a href="#" class="btn btn-outline-secondary mb-2 btn-block btn-sm" style="max-width: 140px;">Youtube</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    <script type="text/javascript" src="js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
+</html>
